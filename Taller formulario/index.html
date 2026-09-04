@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso al Sistema - Modern UI</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login-modern.css">
+</head>
+<body class="modern-auth-body">
+
+    <div class="auth-background-glow"></div>
+
+    <main class="auth-wrapper">
+        <div class="auth-card">
+            
+            <div class="auth-header">
+                <span class="badge-tag">Seguro</span>
+                <h2>Bienvenido de nuevo</h2>
+                <p>Por favor, introduce tus credenciales para continuar.</p>
+            </div>
+
+            <nav class="auth-nav-tabs" aria-label="Navegación de páginas">
+                <a class="tab-item active" href="/index.html">Login</a>
+                <a class="tab-item" href="/html/registro.html">Registro</a>
+                <a class="tab-item" href="/html/hoja-vida.html">Hoja de Vida</a>
+                <a class="tab-item" href="/html/encuesta.html">Encuesta</a>
+            </nav>
+
+            <form id="loginForm" class="auth-form" novalidate>
+                <div class="input-floating-group">
+                    <label for="loginEmail">Correo Electrónico</label>
+                    <div class="input-field-wrapper">
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            name="email"
+                            placeholder="nombre@ejemplo.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="input-floating-group">
+                    <label for="loginPassword">Contraseña</label>
+                    <div class="input-field-wrapper password-row">
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            placeholder="••••••••"
+                            autocomplete="current-password"
+                            minlength="6"
+                            required
+                        >
+                        <button type="button" id="togglePassword" class="btn-eye-toggle" aria-label="Mostrar contraseña">
+                            👁️
+                        </button>
+                    </div>
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+
+                <button type="submit" class="btn-submit-modern">Iniciar Sesión</button>
+            </form>
+
+            <div id="loginWelcome" class="success-banner hidden" aria-live="polite">
+                <div class="success-icon">✓</div>
+                <h3>¡Acceso Autorizado!</h3>
+                <p>Has iniciado sesión con éxito.</p>
+                <p class="user-pill">Correo: <strong id="userEmailDisplay"></strong></p>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

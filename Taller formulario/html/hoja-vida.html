@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Vida - Modern UI</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/hoja-vida-modern.css">
+</head>
+<body class="modern-auth-body">
+
+    <div class="auth-background-glow"></div>
+
+    <main class="auth-wrapper cv-wrapper">
+        <div class="auth-card wide-card">
+            
+            <div class="auth-header">
+                <span class="badge-tag">Perfil Profesional</span>
+                <h2>Hoja de Vida</h2>
+                <p>Agrega tu información personal y experiencia laboral de forma estructurada.</p>
+            </div>
+
+            <nav class="auth-nav-tabs" aria-label="Navegación de páginas">
+                <a class="tab-item" href="../index.html">Login</a>
+                <a class="tab-item" href="/html/registro.html">Registro</a>
+                <a class="tab-item active" href="/html/hoja-vida.html">Hoja de Vida</a>
+                <a class="tab-item" href="/html/encuesta.html">Encuesta</a>
+            </nav>
+
+            <form id="cvForm" class="auth-form" novalidate>
+                <fieldset class="modern-fieldset">
+                    <legend>1. Información Personal</legend>
+
+                    <div class="form-grid">
+                        <div class="input-floating-group">
+                            <label for="cvName">Nombre Completo</label>
+                            <div class="input-field-wrapper">
+                                <input type="text" id="cvName" placeholder="Ej. Ana Gómez" required>
+                            </div>
+                            <span class="error-message" id="cvNameErr"></span>
+                        </div>
+
+                        <div class="input-field-wrapper input-floating-group">
+                            <label for="cvTitle">Título Profesional</label>
+                            <div class="input-field-wrapper">
+                                <input type="text" id="cvTitle" placeholder="Ej. Desarrollador Full Stack" required>
+                            </div>
+                            <span class="error-message" id="cvTitleErr"></span>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="modern-fieldset">
+                    <legend>2. Experiencia Laboral</legend>
+                    <p class="helper-text">Puedes agregar tantas experiencias como necesites.</p>
+
+                    <div id="experienceContainer" class="experience-container"></div>
+
+                    <button type="button" id="addExpBtn" class="btn-secondary-modern">+ Agregar Experiencia</button>
+                </fieldset>
+
+                <button type="submit" class="btn-submit-modern">Generar Vista CV</button>
+            </form>
+
+            <div id="cvPreview" class="success-banner hidden cv-preview-container" aria-live="polite">
+                <div class="success-icon">📄</div>
+                <h3>Vista previa de la Hoja de Vida</h3>
+                <div id="cvPreviewContent" class="cv-preview-content"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../js/hoja-vida.js"></script>
+</body>
+</html>

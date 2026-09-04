@@ -1,0 +1,334 @@
+/* ==============================
+   ESTILOS GENERALES - MODERN UI
+   ============================== */
+
+:root {
+    --bg-dark: #090d16;
+    --card-bg: rgba(17, 24, 39, 0.7);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --error-color: #ef4444;
+    --success-color: #22c55e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.modern-auth-body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+/* Efecto de brillo de fondo ambiental */
+.auth-background-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.05) 50%, transparent 70%);
+    top: -100px;
+    left: -100px;
+    z-index: -1;
+    filter: blur(60px);
+}
+
+/* Contenedor principal de tarjetas */
+.auth-wrapper {
+    width: 100%;
+    max-width: 500px;
+    padding: 1.5rem;
+    z-index: 1;
+}
+
+.auth-wrapper.wide-card,
+.auth-wrapper.survey-wrapper,
+.auth-wrapper.cv-wrapper,
+.auth-wrapper.register-wrapper {
+    max-width: 680px;
+}
+
+/* Tarjeta con efecto Glassmorphism */
+.auth-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Encabezado de la tarjeta */
+.auth-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.badge-tag {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.auth-header h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.75rem;
+    color: var(--text-primary);
+}
+
+.auth-header p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Barra de navegación integrada por pestañas */
+.auth-nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.4rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.tab-item {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.tab-item:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-item.active {
+    background: var(--accent-color);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Grupos de formularios y campos */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.input-floating-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.input-floating-group label,
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(148, 163, 184, 0.5);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Selectores y campos personalizados */
+select option {
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+/* Estados de validación visual */
+input.error, select.error, textarea.error, input.invalid {
+    border-color: var(--error-color) !important;
+    background: rgba(239, 68, 68, 0.05) !important;
+}
+
+input.valid {
+    border-color: var(--success-color) !important;
+    background: rgba(34, 197, 94, 0.05) !important;
+}
+
+.error-message {
+    display: block;
+    min-height: 1.1rem;
+    color: #f87171;
+    font-size: 0.8rem;
+}
+
+/* Botones modernos */
+.btn-submit-modern,
+.btn-primary,
+.btn-success {
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    transition: filter 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit-modern:hover,
+.btn-primary:hover,
+.btn-success:hover {
+    filter: brightness(1.1);
+}
+
+.btn-secondary-modern,
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    border: 1px solid var(--card-border);
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.btn-secondary-modern:hover,
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Tarjetas de éxito (Banner) */
+.success-banner {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 1.5rem;
+    color: var(--success-color);
+    margin-bottom: 0.5rem;
+}
+
+.success-banner h3 {
+    margin: 0 0 0.5rem;
+    color: #4ade80;
+}
+
+.success-banner p {
+    margin: 0.25rem 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.user-pill {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+}
+
+/* Utilidades */
+.hidden {
+    display: none !important;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    accent-color: var(--accent-color);
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+    .auth-card {
+        padding: 1.5rem;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .full-width {
+        grid-column: span 1;
+    }
+}

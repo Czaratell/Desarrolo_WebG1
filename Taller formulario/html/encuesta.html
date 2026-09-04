@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta Dinámica - Modern UI</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/encuesta-modern.css">
+</head>
+<body class="modern-auth-body">
+
+    <div class="auth-background-glow"></div>
+
+    <main class="auth-wrapper survey-wrapper">
+        <div class="auth-card wide-card">
+            
+            <div class="auth-header">
+                <span class="badge-tag">Feedback</span>
+                <h2>Encuesta Dinámica</h2>
+                <p>Selecciona tus preferencias y responde las preguntas de forma interactiva.</p>
+            </div>
+
+            <nav class="auth-nav-tabs" aria-label="Navegación de páginas">
+                <a class="tab-item" href="../index.html">Login</a>
+                <a class="tab-item" href="/html/registro.html">Registro</a>
+                <a class="tab-item" href="/html/hoja-vida.html">Hoja de Vida</a>
+                <a class="tab-item active" href="/html/encuesta.html">Encuesta</a>
+            </nav>
+
+            <form id="surveyForm" class="auth-form" novalidate>
+                <div class="input-floating-group">
+                    <label for="academicLevel">Nivel Académico</label>
+                    <div class="select-field-wrapper">
+                        <select id="academicLevel" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Bachillerato">Bachillerato</option>
+                            <option value="Técnico">Técnico</option>
+                            <option value="Tecnólogo">Tecnólogo</option>
+                            <option value="Universitario">Universitario</option>
+                            <option value="Posgrado">Posgrado</option>
+                        </select>
+                    </div>
+                    <span class="error-message" id="academicErr"></span>
+                </div>
+
+                <div class="input-floating-group">
+                    <label for="languageSelect">Lenguaje Preferido</label>
+                    <div class="select-field-wrapper">
+                        <select id="languageSelect" required>
+                            <option value="">Seleccione...</option>
+                            <option value="HTML/CSS">HTML/CSS</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="Python">Python</option>
+                            <option value="Java">Java</option>
+                            <option value="C#">C#</option>
+                        </select>
+                    </div>
+                    <span class="error-message" id="languageErr"></span>
+                </div>
+
+                <div class="input-floating-group">
+                    <label for="reasonSelect">Motivo de tu elección</label>
+                    <div class="select-field-wrapper">
+                        <select id="reasonSelect" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Facilidad de aprendizaje">Facilidad de aprendizaje</option>
+                            <option value="Uso académico">Uso académico</option>
+                            <option value="Proyectos personales">Proyectos personales</option>
+                            <option value="Versatilidad">Versatilidad</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <span class="error-message" id="reasonErr"></span>
+                </div>
+
+                <div id="otherGroup" class="input-floating-group conditional-field hidden">
+                    <label for="otherReason">Especifica el motivo</label>
+                    <div class="textarea-field-wrapper">
+                        <textarea id="otherReason" rows="4" placeholder="Escribe tu respuesta detallada..."></textarea>
+                    </div>
+                    <span class="error-message" id="otherErr"></span>
+                </div>
+
+                <button type="submit" class="btn-submit-modern">Enviar Encuesta</button>
+            </form>
+
+            <div id="surveySummary" class="success-banner hidden" aria-live="polite">
+                <div class="success-icon">✓</div>
+                <h3>Resumen de Respuestas Enviadas</h3>
+                <div class="summary-details">
+                    <p><strong>Nivel Académico:</strong> <span id="summaryAcademic"></span></p>
+                    <p><strong>Lenguaje Preferido:</strong> <span id="summaryLanguage"></span></p>
+                    <p><strong>Motivo:</strong> <span id="summaryReason"></span></p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../js/encuesta.js"></script>
+</body>
+</html>

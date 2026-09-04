@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuarios - Modern UI</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/registro-modern.css">
+</head>
+<body class="modern-auth-body">
+
+    <div class="auth-background-glow"></div>
+
+    <main class="auth-wrapper register-wrapper">
+        <div class="auth-card wide-card">
+            
+            <div class="auth-header">
+                <span class="badge-tag">Nuevo Registro</span>
+                <h2>Crea una cuenta</h2>
+                <p>Completa los datos para registrarte en el sistema.</p>
+            </div>
+
+            <nav class="auth-nav-tabs" aria-label="Navegación de páginas">
+                <a class="tab-item" href="../index.html">Login</a>
+                <a class="tab-item active" href="/html/registro.html">Registro</a>
+                <a class="tab-item" href="/html/hoja-vida.html">Hoja de Vida</a>
+                <a class="tab-item" href="/html/encuesta.html">Encuesta</a>
+            </nav>
+
+            <form id="regForm" class="auth-form form-grid" novalidate>
+                <div class="full-width input-floating-group">
+                    <label for="fullname">Nombre Completo</label>
+                    <div class="input-field-wrapper">
+                        <input type="text" id="fullname" name="fullname" placeholder="Tu nombre completo" required>
+                    </div>
+                    <span class="error-message" id="nameErr"></span>
+                </div>
+
+                <div class="input-floating-group">
+                    <label for="regEmail">Correo Electrónico</label>
+                    <div class="input-field-wrapper">
+                        <input type="email" id="regEmail" name="email" placeholder="usuario@dominio.com" required>
+                    </div>
+                    <span class="error-message" id="regEmailErr"></span>
+                </div>
+
+                <div class="input-floating-group">
+                    <label for="gender">Género</label>
+                    <div class="select-field-wrapper">
+                        <select id="gender" name="gender">
+                            <option value="">Seleccione...</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                            <option value="O">Otro</option>
+                        </select>
+                    </div>
+                    <span class="error-message" id="genderErr"></span>
+                </div>
+
+                <div class="input-floating-group">
+                    <label for="regPassword">Contraseña</label>
+                    <div class="input-field-wrapper">
+                        <input type="password" id="regPassword" name="password" minlength="6" placeholder="Mínimo 6 caracteres" required>
+                    </div>
+                    <span class="error-message" id="regPasswordErr"></span>
+                </div>
+
+                <div class="input-floating-group">
+                    <label for="confirmPassword">Confirmar Contraseña</label>
+                    <div class="input-field-wrapper">
+                        <input type="password" id="confirmPassword" name="confirmPassword" minlength="6" placeholder="Repite la contraseña" required>
+                    </div>
+                    <span class="error-message" id="confirmPasswordErr"></span>
+                </div>
+
+                <div class="full-width checkbox-group">
+                    <label class="checkbox-label" for="terms">
+                        <input type="checkbox" id="terms" name="terms">
+                        <span>Acepto los Términos y Condiciones</span>
+                    </label>
+                    <span class="error-message" id="termsErr"></span>
+                </div>
+
+                <button type="submit" class="full-width btn-submit-modern">Registrar Cuenta</button>
+            </form>
+
+            <div id="regSummary" class="success-banner hidden" aria-live="polite">
+                <div class="success-icon">✓</div>
+                <h3>¡Cuenta Creada con Éxito!</h3>
+                <p id="summaryText"></p>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../js/registro.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+/* ==============================
+   ESTILOS MODERNOS - REGISTRO
+   ============================== */
+
+/* Cuadrícula de campos para el formulario de registro */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 1.25rem;
+}
+
+/* Elementos que ocupan todo el ancho de la cuadrícula */
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Grupo de casillas de verificación (Términos y condiciones) */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary, #94a3b8);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    accent-color: var(--accent-color, #3b82f6);
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+    border-radius: 4px;
+}
+
+/* Adaptabilidad para dispositivos móviles */
+@media (max-width: 650px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+}

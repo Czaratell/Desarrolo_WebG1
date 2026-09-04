@@ -1,0 +1,58 @@
+/* ==============================
+   ESTILOS MODERNOS - ENCUESTA
+   ============================== */
+
+/* Ajuste específico para tarjetas de encuesta más anchas */
+.auth-card.wide-card {
+    max-width: 650px;
+    width: 100%;
+}
+
+/* Campo condicional adaptado al estilo Glassmorphism */
+.conditional-field {
+    padding: 1.25rem;
+    border-left: 4px solid var(--accent-color, #3b82f6);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 0 12px 12px 0;
+    margin-top: 0.5rem;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.conditional-field textarea {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.75rem;
+    width: 100%;
+    resize: vertical;
+}
+
+.conditional-field textarea:focus {
+    outline: none;
+    border-color: var(--accent-color, #3b82f6);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+/* Estilos para el resumen de la encuesta */
+.summary-details {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.summary-details p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.summary-details strong {
+    color: #fff;
+}
